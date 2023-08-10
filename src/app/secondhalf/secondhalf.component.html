@@ -1,0 +1,27 @@
+<p>secondhalf works!</p>
+<!-- <div class="search-container">
+    <span>Search</span>
+    <input type="text" [(ngModel)]="enterdSearchValue" (input)="OnSearchTextChanged()">
+</div> -->
+<!-- <div ng-controller="myController">
+    Search:<input type="text" placeholder="search data" ng-model="searchText" />
+</div> -->
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Type to search" [(ngModel)]="filterTerm">
+  </div>
+<table border="1px" *ngIf="allData.length!=0">
+    <tr>
+        <th>firstname</th>
+        <th>middlename</th>
+        <th>lastname</th>
+        <th>phone number</th>
+        <th>email id</th>
+    </tr>
+    <tr *ngFor="let user of allData | filter:filterTerm">
+        <td>{{user.FirstName}}</td>
+        <td>{{user.MiddleName}}</td>
+        <td>{{user.LastName}}</td>
+        <td>{{user.PhoneNumber}}</td>
+        <td>{{user.EmailId}}</td>
+    </tr>
+</table>
